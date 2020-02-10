@@ -1,0 +1,13 @@
+Username: vkdJsyTVsD
+
+Database name: vkdJsyTVsD
+
+Password: HMUebz7tEN
+
+Server: remotemysql.com
+
+Port: 3306S
+
+let mysql = await data.getDate(2020,02,08);
+  console.log(new Date(mysql[0].date).getDate());
+  let day = new Date(year,month,0).getDay(); 

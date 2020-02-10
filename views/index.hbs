@@ -1,0 +1,66 @@
+<div class="nav">
+<div class="year">
+    <a href="/prev"><div class="prev"> &lt; </div></a>
+    <div class="min_width">{{year}}</div> 
+    <a href="/next"><div class="next"> &gt; </div></a>
+</div>
+<div class="month">
+    <a href="/prevmonth"><div class="prevmonth"> &lt; </div></a>
+    <div class="min_width">{{this_month_ru}} </div>
+    <a href="/nextmonth"><div class="nextmonth"> &gt; </div></a>
+</div>
+</div>
+
+    <div class="days_conteiner">
+     <div class="week_day">понедельник</div>
+     <div class="week_day">вторник</div>
+     <div class="week_day">среда</div>
+     <div class="week_day">четверг</div>
+     <div class="week_day">пятница</div>
+     <div class="week_day">суббота</div>
+     <div class="week_day">воскресенье</div>
+
+{{#each before}}
+ <div class="none_days">  {{this}} </div>
+{{/each}}
+
+{{#each days}}
+ <div class="days" data-year={{this.year}} data-month={{this.month}} data-day={{this.day}}>
+     
+{{#if this.key}}
+    <div class="day_number">{{this.day}}</div>
+    <div class="event">Событие : {{this.obj.event}}</div>
+    <div class="description">Описание : {{this.obj.description}}</div> 
+    
+    {{else}}
+    <div class="day_number">{{this.day}}</div>
+{{/if}}
+
+      
+ </div>
+
+{{/each}}
+
+{{#each after}}
+ <div class="none_days">  {{this}} </div>
+{{/each}}
+</div>
+
+<div class="feedback_background">
+    <form action="/" method="post">
+        <div class="feedback_conteiner">
+            <h3 id="h3">Опишите событие</h3>
+            <h5 id="validation">Заполните все поля!!</h5>
+            <label for="event">Введите событие:</label>
+            <input type="text" id="event" name="event">
+
+            <label for="description">Введите описание:</label>
+            <input type="text" id="description" name="description">
+
+            {{!--
+            <input type="submit"> --}}
+            <div id='submit'>отправить</div>
+            <div id="exit">закрыть</div>
+        </div>
+    </form>
+</div>
